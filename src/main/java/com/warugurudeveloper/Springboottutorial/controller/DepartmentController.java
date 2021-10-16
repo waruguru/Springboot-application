@@ -4,9 +4,12 @@ import com.warugurudeveloper.Springboottutorial.entity.Department;
 import com.warugurudeveloper.Springboottutorial.service.DepartmentService;
 import com.warugurudeveloper.Springboottutorial.service.DepartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class DepartmentController {
@@ -20,5 +23,11 @@ public class DepartmentController {
 //        DepartmentService service =new DepartmentServiceImpl() {
         return departmentService.saveDepartment(department);
         }
+        //method to get all departments
+    @GetMapping("/departments")
+    public List<Department> fetchDepartmentList(){
+        return departmentService.fetchDepartmentList();
+
     }
-}
+    }
+
