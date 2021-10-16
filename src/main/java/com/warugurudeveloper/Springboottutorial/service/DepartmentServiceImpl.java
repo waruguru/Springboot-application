@@ -52,5 +52,10 @@ public class DepartmentServiceImpl implements DepartmentService{
         return departmentRepository.save(department1);
 
     }
+//findByDepartment is the name of attribute in the entity
+    @Override
+    public Department fetchDepartmentByName(String departmentName) {
+        return departmentRepository.findByDepartmentNameIgnoresCase(departmentName);
+    }
 
 }
