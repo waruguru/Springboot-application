@@ -23,4 +23,15 @@ public class DepartmentServiceImpl implements DepartmentService{
        return departmentRepository.findAll();
     }
 
+    @Override
+    public Department fetchDepartmentByID(Long departmentId) {
+        return departmentRepository.findById(departmentId).get();
+    }
+
+    @Override
+    public void deleteDepartmentById(Long departmentId) {
+        departmentRepository.deleteById(departmentId);
+
+    }
+
 }
